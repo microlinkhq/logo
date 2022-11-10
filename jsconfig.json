@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    /* https://theme-ui.com/guides/jsx-pragma#with-swc */
+    "jsx": "preserve",
+    "jsxImportSource": "theme-ui", // or "@theme-ui/core"
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}

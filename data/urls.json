@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Observable universe",
+    "href": "https://en.wikipedia.org/wiki/Observable_universe",
+    "logo": "https://en.m.wikipedia.org/static/apple-touch/wikipedia.png"
+  },
+  {
+    "title": "Turbopack by Vercel",
+    "href": "https://vercel.com/blog/turbopack",
+    "logo": "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png"
+  },
+  {
+    "title": "Why is Rosetta 2 fast",
+    "href": "https://news.ycombinator.com/item?id=33533132",
+    "logo": "https://news.ycombinator.com/y18.svg"
+  },
+  {
+    "title": "Tesla motors explained",
+    "href": "https://kikobeats.com/tesla-motors-explained/",
+    "logo": "https://kikobeats.com/images/avatar-glitch.jpg"
+  },
+  {
+    "title": "RolandMC-500.css",
+    "href": "https://codepen.io/fossheim/pen/BaKQGZJ",
+    "logo": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://codepen.io/fossheim/pen/BaKQGZJ&size=128"
+  },
+  {
+    "title": "WritableStream",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/API/WritableStream",
+    "logo": "https://developer.mozilla.org/favicon-48x48.cbbd161b.png"
+  },
+  {
+    "title": "Google is shutting down Stadia",
+    "href": "https://www.theverge.com/2022/9/29/23378713/google-stadia-shutting-down-game-streaming-january-2023",
+    "logo": "https://www.theverge.com/icons/android_chrome_512x512.png"
+  },
+  {
+    "title": "Ex-Reddit CEO on Twitter moderation",
+    "href": "https://twitter.com/yishan/status/1586955288061452289",
+    "logo": "https://abs.twimg.com/favicons/twitter.3.ico"
+  },
+  {
+    "title": "Medium’s CSS is so good",
+    "href": "https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06",
+    "logo": "https://miro.medium.com/v2/resize:fill:152:152/1*sHhtYhaCe2Uc3IU0IgKwIQ.png"
+  },
+  {
+    "title": "Compute shader 101",
+    "href": "https://www.youtube.com/watch?v=DZRn_jNZjbw",
+    "logo": "https://m.youtube.com/static/favicon.ico"
+  },
+  {
+    "title": "Metascraper, unified metadata from websites",
+    "href": "https://github.com/microlinkhq/metascraper",
+    "logo": "https://github.com/fluidicon.png"
+  }
+]

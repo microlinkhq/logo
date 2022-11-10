@@ -1,0 +1,54 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "dependencies": {
+    "@emotion/react": "~11.11.3",
+    "@emotion/styled": "~11.11.0",
+    "framer-motion": "~11.0.5",
+    "next": "14.1.0",
+    "react": "~18.2.0",
+    "react-dom": "~18.2.0",
+    "react-responsive-embed": "~2.1.0",
+    "sugar-high": "~0.6.0",
+    "theme-ui": "~0.16.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@ksmithut/prettier-standard": "latest",
+    "@metascraper/helpers": "latest",
+    "@microlink/mql": "latest",
+    "google-auth-library": "latest",
+    "google-spreadsheet": "latest",
+    "reachable-url": "latest",
+    "simple-git-hooks": "latest",
+    "standard": "latest"
+  },
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "standard && next lint",
+    "postinstall": "node scripts/postinstall.js",
+    "start": "next start"
+  },
+  "private": true,
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "nano-staged": {
+    "*.js": [
+      "prettier-standard",
+      "standard --fix"
+    ],
+    "package.json": [
+      "finepack"
+    ]
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npx commitlint --edit",
+    "pre-commit": "npx nano-staged"
+  },
+  "type": "module"
+}
