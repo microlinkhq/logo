@@ -15,6 +15,7 @@ import {
   Metascraper,
   Microlink,
   Paragraph,
+  ProductHunt,
   Select,
   Spreadsheet,
   Subhead,
@@ -113,6 +114,7 @@ const Link = ({ logo, children, ...props }) => {
       </Head>
       <GitHubCorner href='https://github.com/microlinkhq/logo' />
       <Box as='header'>
+        <ProductHunt sx={{ pt: 4 }} />
         <Heading sx={{ pb: 3 }}>Microlink for Logo</Heading>
         <Subhead
           as='h2'

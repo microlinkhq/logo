@@ -2,8 +2,8 @@ import { Box, Text } from 'theme-ui'
 
 export const Subhead = props => <Text as='h2' variant='subhead' {...props} />
 
-export const Paragraph = ({ sx, ...props }) => (
-  <Text as='p' variant='paragraph' sx={{ pt: 4, ...sx }} {...props} />
+export const Paragraph = props => (
+  <Text as='p' variant='paragraph' sx={{ pt: 4 }} {...props} />
 )
 
 export const Heading = props => <Text as='h1' variant='heading' {...props} />
