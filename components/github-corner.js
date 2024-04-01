@@ -1,40 +1,37 @@
+import { css, keyframes } from '@emotion/react'
 import { Svg } from './theme-ui'
 import { Link } from './link'
 import { transitions } from '@/theme.js'
 
+const octoArm = keyframes`
+0%,
+100% {
+  transform: rotate(0);
+}
+20%,
+60% {
+  transform: rotate(-25deg);
+}
+40%,
+80% {
+  transform: rotate(10deg);
+}
+`
+
 export const GitHubCorner = props => (
   <Link.External
     aria-label='View source on GitHub'
-    css={`
-      &:hover {
-        opacity: 1;
-      }
+    css={css`
       .octo-arm {
         transform-origin: 130px 106px;
       }
       &:hover .octo-arm {
-        animation: octocat-wave ${transitions.long};
+        animation: ${octoArm} ${transitions.long};
       }
-      @keyframes octocat-wave {
-        0%,
-        100% {
-          transform: rotate(0);
-        }
-        20%,
-        60% {
-          transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-          transform: rotate(10deg);
-        }
-      }
+
       @media (max-width: 500px) {
         &:hover .octo-arm {
           animation: none;
-        }
-        & .octo-arm {
-          animation: octocat-wave ${transitions.long};
         }
       }
     `}
