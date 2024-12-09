@@ -4,7 +4,7 @@
   "homepage": "https://logo.microlink.io/",
   "version": "0.0.0",
   "dependencies": {
-    "@emotion/react": "~11.13.5",
+    "@emotion/react": "~11.14.0",
     "@emotion/styled": "~11.14.0",
     "framer-motion": "~11.13.1",
     "next": "15.0.4",
