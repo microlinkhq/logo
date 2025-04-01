@@ -8,11 +8,11 @@
     "@emotion/styled": "~11.14.0",
     "framer-motion": "~12.6.2",
     "next": "15",
-    "react": "~19.0.0",
-    "react-dom": "~19.0.0",
+    "react": "~19.1.0",
+    "react-dom": "~19.1.0",
     "react-responsive-embed": "~2.1.0",
-    "sugar-high": "~0.9.2",
-    "theme-ui": "~0.17.1"
+    "sugar-high": "~0.9.3",
+    "theme-ui": "~0.17.2"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
