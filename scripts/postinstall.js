@@ -63,17 +63,17 @@ Promise.all([
     await mkdir('data').catch(() => {})
     await writeFile('data/urls.json', JSON.stringify(data, null, 2))
   }),
-  downloadLogo('https://cdn.microlink.io/logo/trim.png', 'public/favicon'),
+  downloadLogo('https://cdn.microlink.io/logo/logo.png', 'public/favicon'),
   downloadLogo(
     await getLogo(
       'https://docs.google.com/spreadsheets/d/1YSD1qeP_fWxCQK1OY40Z2SKGtTg4XID8xDaY-w3C6oE/edit?usp=sharing'
     ),
     'public/spreadsheet'
   ),
-  downloadLogo(
-    await getLogo('https://radar.cloudflare.com/domains'),
-    'public/cloudflare'
-  ),
+  // downloadLogo(
+  //   await getLogo('https://radar.cloudflare.com/domains'),
+  //   'public/cloudflare'
+  // ),
   downloadLogo(
     await getLogo('https://metascraper.js.org/'),
     'public/metascraper'

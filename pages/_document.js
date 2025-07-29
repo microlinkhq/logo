@@ -4,7 +4,7 @@ const meta = {
   image: 'https://logo.microlink.io/share.jpg',
   description: 'Adding logos to any website powered by Microlink API.',
   title: 'Microlink for Logo',
-  logo: 'https://cdn.microlink.io/logo/trim.png',
+  logo: 'https://cdn.microlink.io/logo/logo.png',
   url: 'https://logo.microlink.io'
 }
 
