@@ -11,7 +11,7 @@
     "react": "~19.1.0",
     "react-dom": "~19.1.0",
     "react-responsive-embed": "~2.1.0",
-    "sugar-high": "~0.9.3",
+    "sugar-high": "~1.1.0",
     "theme-ui": "~0.17.2"
   },
   "devDependencies": {
