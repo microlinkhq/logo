@@ -9,7 +9,7 @@
     "framer-motion": "~12.23.25",
     "next": "15",
     "react": "~19.1.0",
-    "react-dom": "~19.1.0",
+    "react-dom": "~19.2.5",
     "react-responsive-embed": "~2.1.0",
     "sugar-high": "~0.9.3",
     "theme-ui": "~0.17.2"
