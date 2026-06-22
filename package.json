@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/react": "~11.14.0",
     "@emotion/styled": "~11.14.0",
+    "@microlink/mql": "~0.16.1",
     "framer-motion": "~12.23.25",
     "next": "15",
     "react": "~19.1.0",
@@ -19,7 +20,6 @@
     "@commitlint/config-conventional": "latest",
     "@ksmithut/prettier-standard": "latest",
     "@metascraper/helpers": "latest",
-    "@microlink/mql": "latest",
     "google-auth-library": "latest",
     "google-spreadsheet": "latest",
     "reachable-url": "latest",
