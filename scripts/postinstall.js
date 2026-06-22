@@ -1,13 +1,29 @@
-import { getLogo } from '../lib/logo.js'
 import { writeFile, mkdir } from 'fs/promises'
+import mql from '@microlink/mql'
 
-const downloadLogo = (url, dist) =>
-  fetch(url)
+const API_KEY = process.env.MICROLINK_API_KEY
+
+const getLogo = href =>
+  mql(href, { apiKey: API_KEY }).then(({ data }) => data.logo?.url)
+
+const safeGetLogo = href =>
+  getLogo(href).catch(error => {
+    console.warn(`[postinstall] skip logo for ${href}: ${error.message}`)
+    return null
+  })
+
+const downloadLogo = (url, dist) => {
+  if (!url) return Promise.resolve()
+  return fetch(url)
     .then(async res => [
       Buffer.from(await res.arrayBuffer()),
       res.headers.get('content-type').split('image/')[1].replace('x-', '')
     ])
     .then(([buffer, extension]) => writeFile(`${dist}.${extension}`, buffer))
+    .catch(error =>
+      console.warn(`[postinstall] skip download ${dist}: ${error.message}`)
+    )
+}
 
 const URLS = [
   {
@@ -56,27 +72,26 @@ const URLS = [
 Promise.all([
   Promise.all(
     URLS.map(async props => {
-      props.logo = await getLogo(props.href)
+      props.logo = await safeGetLogo(props.href)
       return props
     })
-  ).then(async data => {
-    await mkdir('data').catch(() => {})
-    await writeFile('data/urls.json', JSON.stringify(data, null, 2))
-  }),
-  downloadLogo('https://cdn.microlink.io/logo/logo.png', 'public/favicon'),
-  downloadLogo(
-    await getLogo(
-      'https://docs.google.com/spreadsheets/d/1YSD1qeP_fWxCQK1OY40Z2SKGtTg4XID8xDaY-w3C6oE/edit?usp=sharing'
+  )
+    .then(async data => {
+      await mkdir('data').catch(() => {})
+      await writeFile('data/urls.json', JSON.stringify(data, null, 2))
+    })
+    .catch(error =>
+      console.warn(`[postinstall] skip data/urls.json: ${error.message}`)
     ),
-    'public/spreadsheet'
-  ),
-  // downloadLogo(
-  //   await getLogo('https://radar.cloudflare.com/domains'),
-  //   'public/cloudflare'
+  downloadLogo('https://cdn.microlink.io/logo/logo.png', 'public/favicon'),
+  safeGetLogo(
+    'https://docs.google.com/spreadsheets/d/1YSD1qeP_fWxCQK1OY40Z2SKGtTg4XID8xDaY-w3C6oE/edit?usp=sharing'
+  ).then(url => downloadLogo(url, 'public/spreadsheet')),
+  // safeGetLogo('https://radar.cloudflare.com/domains').then(url =>
+  //   downloadLogo(url, 'public/cloudflare')
   // ),
-  downloadLogo(
-    await getLogo('https://metascraper.js.org/'),
-    'public/metascraper'
+  safeGetLogo('https://metascraper.js.org/').then(url =>
+    downloadLogo(url, 'public/metascraper')
   )
 ]).then(() => {
   process.exit(0)
