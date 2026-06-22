@@ -1,5 +1,16 @@
-import { getLogo } from '../lib/logo.js'
 import { writeFile, mkdir } from 'fs/promises'
+
+const API_KEY = process.env.MICROLINK_API_KEY
+
+const getLogo = href => {
+  const endpoint = `https://api.microlink.io?url=${encodeURIComponent(
+    href
+  )}&filter=logo.url`
+  const options = API_KEY ? { headers: { 'x-api-key': API_KEY } } : undefined
+  return fetch(endpoint, options)
+    .then(res => res.json())
+    .then(({ data }) => data.logo.url)
+}
 
 const safeGetLogo = href =>
   getLogo(href).catch(error => {
