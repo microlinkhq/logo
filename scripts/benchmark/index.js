@@ -7,7 +7,7 @@ import { extension } from '@metascraper/helpers'
 import { JWT } from 'google-auth-library'
 import reachableUrl from 'reachable-url'
 import { readFile } from 'fs/promises'
-import mql from '@microlink/mql'
+import microlink from 'microlink.io'
 
 const serviceAccountAuth = new JWT({
   email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
@@ -63,14 +63,15 @@ const spreadsheet = async type => {
 
 const toHttps = input => (input.startsWith('http') ? input : `https://${input}`)
 
+const client = microlink({
+  endpoint: 'http://localhost:3000'
+  // apiKey: process.env.MICROLINK_API_KEY
+})
+
 const fromMicrolink = input =>
-  mql(toHttps(input), {
-    meta: true,
-    endpoint: 'http://localhost:3000'
-    // apiKey: process.env.MICROLINK_API_KEY
-  }).then(({ data }) => {
-    if (data.logo?.size === 0) return undefined
-    return data.logo?.url
+  client.logo(toHttps(input)).then(logo => {
+    if (logo?.size === 0) return undefined
+    return logo?.url
   })
 
 const toImage = url => {

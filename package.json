@@ -6,8 +6,8 @@
   "dependencies": {
     "@emotion/react": "~11.14.0",
     "@emotion/styled": "~11.14.0",
-    "@microlink/mql": "~0.19.0",
     "framer-motion": "14",
+    "microlink.io": "~1.1.4",
     "next": "15",
     "react": "~19.1.0",
     "react-dom": "~19.1.0",
